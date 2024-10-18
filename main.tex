@@ -1,0 +1,66 @@
+\documentclass[toc=chapterentrywithdots]{scrbook}
+\areaset{345pt}{550pt}% formatação das margens
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{adforn}
+\usepackage{tikz}% loads also graphicx,xcolor, etc.
+\usepackage{scrdate}
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[chapter]{chapter}
+\ihead{\footnotesize\headmark}
+\ohead{\footnotesize\pagemark}
+
+\setkomafont{disposition}{\normalcolor\bfseries}
+\renewcommand*{\chapterformat}{{%
+  \Huge\thechapter\enskip
+  \textcolor{gray!50}{\rule[-\dp\strutbox]{4pt}{\baselineskip}}\enskip
+}}
+
+\RedeclareSectionCommands[
+  beforeskip=-1.5\baselineskip,
+  afterskip=.23\baselineskip
+]{section,subsection,subsubsection}
+
+
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+%\addtokomafont{chapter}{\LARGE}
+\addtokomafont{section}{\normalsize}
+\begin{document}
+% \title{Diário de Viagem à Europa}
+% \author{Othon Branco Baena}
+% \date{1959}
+% \maketitle
+
+\begin{titlepage}
+        \centering
+        \includegraphics[width=4cm]{capa_diario.jpg}\par
+        \vspace{4\baselineskip}
+        {\Huge Diário de Viagem à Europa\\ \par}
+        \vspace{2\baselineskip}
+        {\Large 1959 \\ \par}
+        \vspace{4\baselineskip}
+        {\large\textsc{by\\[.5em]Othon Branco Baena}}
+        \vfill
+        Congresso Internacional de Esperanto\\realizado em Bruxelas\\[1em]
+        {\em Baena Books}
+ \end{titlepage}
+ 
+\tableofcontents
+
+
+\input{julho}
+\input{agosto}
+\input{setembro}
+\input{outubro}
+
+\begin{center}
+  \textbf{Othon Branco Baena}
+  
+    \textbf{Outubro - 1959}
+\end{center}
+
+\end{document} 
