@@ -1,5 +1,6 @@
 \documentclass[toc=chapterentrywithdots]{scrbook}
-\areaset{345pt}{550pt}% formatação das margens
+%\areaset{345pt}{550pt}% formatação das margens
+\raggedbottom
 \usepackage[brazil]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{adforn}
@@ -10,44 +11,42 @@
 \automark[chapter]{chapter}
 \ihead{\footnotesize\headmark}
 \ohead{\footnotesize\pagemark}
+% \setkomafont{disposition}{\normalcolor\bfseries}
+% \renewcommand*{\chapterformat}{{%
+%   \Huge\thechapter\enskip
+%   \textcolor{gray!50}{\rule[-\dp\strutbox]{4pt}{\baselineskip}}\enskip
+% }}
 
-\setkomafont{disposition}{\normalcolor\bfseries}
-\renewcommand*{\chapterformat}{{%
-  \Huge\thechapter\enskip
-  \textcolor{gray!50}{\rule[-\dp\strutbox]{4pt}{\baselineskip}}\enskip
-}}
-
-\RedeclareSectionCommands[
-  beforeskip=-1.5\baselineskip,
-  afterskip=.23\baselineskip
-]{section,subsection,subsubsection}
-
-
+% \RedeclareSectionCommands[
+%   beforeskip=-1.5\baselineskip,
+%   afterskip=.23\baselineskip
+% ]{section,subsection,subsubsection}
 
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
 %\addtokomafont{chapter}{\LARGE}
-\addtokomafont{section}{\normalsize}
-\begin{document}
-% \title{Diário de Viagem à Europa}
-% \author{Othon Branco Baena}
-% \date{1959}
-% \maketitle
+%\addtokomafont{section}{\normalsize}
+\usepackage{lmodern}
+\newlength\drop
+\makeatletter
+\newcommand*\titleM{\begingroup% Misericords, T&H p 153
+\setlength\drop{0.08\textheight}
+\centering
+\vspace*{\drop}
+{\Huge\bfseries Diário de Viagem à Europa}\\[\baselineskip]
+{\scshape 44º Congresso Universal de Esperanto\\realizado em Varsóvia, Polônia}\\[\baselineskip]
+\vfill
+{\large\scshape Othon Branco Baena}\par
+\vfill
+{\scshape 1959}\par
+\vspace*{2\drop}
+\endgroup}
+\makeatother
 
-\begin{titlepage}
-        \centering
-        \includegraphics[width=4cm]{capa_diario.jpg}\par
-        \vspace{4\baselineskip}
-        {\Huge Diário de Viagem à Europa\\ \par}
-        \vspace{2\baselineskip}
-        {\Large 1959 \\ \par}
-        \vspace{4\baselineskip}
-        {\large\textsc{by\\[.5em]Othon Branco Baena}}
-        \vfill
-        Congresso Internacional de Esperanto\\realizado em Bruxelas\\[1em]
-        {\em Baena Books}
- \end{titlepage}
+
+\begin{document}
+\titleM
  
 \tableofcontents
 
